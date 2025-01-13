@@ -1,4 +1,4 @@
-# Github Repository Manager Tool
+# Github Repository Manager Script
 
 ### Project Information
 * Member
@@ -17,8 +17,15 @@
     ```
 * Config User token and etc edit
     ```ps1
-    config/token.ps1
+    # Path : config/token.ps1
     GITHUB_TOKEN = "your github access token"
     GITHUB_USERNAME = "your github username"
     GITHUB_URL = "your github overview url"
+    ```
+  * PowerShell File Access
+    ```ps
+    Unblock-File -Path C:\Users\yourname\to\path\Run.ps1
+    # or
+
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
     ```
