@@ -15,6 +15,7 @@
     ```ps1
     git clone https://github.com/gunwoo8873/Repository-PSVersion.git
     ```
+    
 * Config User token and etc edit
     ```ps1
     # Path : config/token.ps1
@@ -22,10 +23,10 @@
     GITHUB_USERNAME = "your github username"
     GITHUB_URL = "your github overview url"
     ```
-  * PowerShell File Access
-    ```ps
-    Unblock-File -Path C:\Users\yourname\to\path\Run.ps1
-    # or
 
-    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
-    ```
+* PowerShell File Access
+  ```ps
+  Unblock-File -Path C:\Users\yourname\to\path\Run.ps1
+  # or
+  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+  ```
