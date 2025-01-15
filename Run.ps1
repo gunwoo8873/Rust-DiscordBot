@@ -4,17 +4,9 @@
 #
 #############################################
 
-# Need to run the script in the root directory
-$GITHUB = "bin/GithubRepo.ps1"
-$HELP = "bin/Help.ps1"
-$EDIT = "bin/Edit.ps1"
-$OPTIONS = "bin/Options.ps1"
-$FILECHECK = "config/FileCheck.ps1"
-$TOKEFILE = "config/token.ps1"
-
 function Display_Menu() {
   # Menu list arr output
-  $MENUS = @("Repository List","Repository Clone","Options","Exit")
+  $MENUS = @("Repository Search","Repository List","Repository Clone","Help","Options","Exit")
 
   for ($i = 0; $i -lt $MENUS.Length; $i++) {
     Write-Output "$i : $($MENUS[$i])"
@@ -26,24 +18,26 @@ function Process_Select() {
     [int]$SELECT_INPUT_NUMBER
   )
 
+  $BIN_PATH = "bin"
+  $EDIT_FILE = Join-Path $BIN_PATH "Edit.ps1"
+  $GITHUB_FILE = Join-Path $BIN_PATH "GithubRepo.ps1"
+  $HELP_FILE = Join-Path $BIN_PATH "Help.ps1"
+  $OPTIONS_FILE = Join-Path $BIN_PATH "Options.ps1"
+
+  $CONFIG_PATH = "config"
+  $TOKEN_FILE = Join-Path $CONFIG_PATH "token.ps1"
+  $FILECHECK_FILE = Join-Path $CONFIG_PATH "FileCheck.ps1"
+
   switch ([int]::TryParse($SELECT_INPUT_NUMBER, [ref]$null)) {
     $true {
       switch ([int]$SELECT_INPUT_NUMBER) {
-        0 { 
-          Write-Output "Exit" 
-        }
-        1 {
-          Write-Output "Exit"
-        }
-        2 {
-          Write-Output "Exit" 
-        }
-        3 {
-          Write-Output "Exit" 
-        }
-        default {
-          Write-Output "Please select the correct menu number" 
-        }
+        0 { $GITHUB_FILE }
+        1 { $GITHUB_FILE }
+        2 { $GITHUB_FILE }
+        3 { $HELP_FILE }
+        4 { $OPTIONS_FILE }
+        5 { Write-Output "Exit" }
+        default { Write-Output "Please select the correct menu number" }
       }
     }
     $false {
@@ -63,10 +57,10 @@ function Select_Menus() {
     if ([int]::TryParse($SELECT_INPUT_NUMBER, [ref]$null)) {
       Process_Select -SELECT_INPUT_NUMBER ([int]$SELECT_INPUT_NUMBER)
 
-      if ([int]$SELECT_INPUT_NUMBER -eq 3) {
+      if ([int]$SELECT_INPUT_NUMBER -eq 5) {
         break
       }
-    } 
+    }
     else {
       Write-Output "Please select the correct menu number"
     }
