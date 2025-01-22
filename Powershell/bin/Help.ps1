@@ -8,3 +8,5 @@
 .NOTES
     Author : PITLANE | License : MIT | DevDate : 2025-01-12
 #>
+
+Write-Output "Test Help"
