@@ -1,4 +1,4 @@
-# Github Repository Manager Script
+# Github repository management script
 
 ### Project Information
 * Member
@@ -7,7 +7,7 @@
     * `2025-01.12`
 * Description
     ```md
-    This project the Powershell and Bash shell at Github Repository managerment script
+    This project the Powershell and Bash shell at Github repository management script
     ```
 
 ## Project Manual
