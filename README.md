@@ -1,17 +1,9 @@
 # Solo ETC Project
 
-### Project Information
-* Member
-    * `PITLANE`
-* Dev start date
-    * `2025. 02. 02`
-* Description
-    ```md
-    This ETC Project in the rust, go programing language
-    ```
-
-## Project Manual
-* Project Clone
-    ```ps1
-    git clone https://github.com/gunwoo8873/Repository-PSVersion.git
-    ```
+## Project information
+* Member  
+  `PITLANE`
+* Dev date  
+  `2025. 02. 05.`
+* Discriotion  
+  `This project is Discord bot and AWS cloud system status checking for on the rust language`
