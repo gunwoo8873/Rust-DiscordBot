@@ -33,3 +33,15 @@
     }
   }
   ```
+
+### Cargo lib
+* serenity : Discord bot for rust programing languageb
+* dotenv : read to .env file and need to add std::env
+* tokio : async thread feture
+
+```toml
+[dependencies]
+serenity = { version = "0.12.4", default-features = false, features = ["client", "gateway", "rustls_backend", "model"] }
+dotenv = { version = "0.15.0" }
+tokio = { version = "1.43.0", features = ["macros", "rt-multi-thread"] }
+```
