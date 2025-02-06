@@ -8,10 +8,8 @@
 * Discriotion  
   `This project is Discord bot and AWS cloud system status checking for on the rust language`
 
-
 ## Project useing for setup guide
 ### Discord
-
 * **Config**
   ```env
   # Path : Discord-Bot/.env
@@ -19,7 +17,6 @@
   ```
 
 ### AWS
-
 * **Config**
   ```json
   // Path : Discord-Bot/src/service/config.json

@@ -4,6 +4,13 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+# Discord
 serenity = { version = "0.12.4", default-features = false, features = ["client", "gateway", "rustls_backend", "model"] }
+
+# AWS
+# aws-config = { version = "1.5.16" }
+# aws-sdk-ec2instanceconnect = { version = "1.58.0" }
+
+# Other
+tokio = { version = "1.43.0", features = ["full"] }
 dotenv = { version = "0.15.0" }
-tokio = { version = "1.43.0", features = ["macros", "rt-multi-thread"] }

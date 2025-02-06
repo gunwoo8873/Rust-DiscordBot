@@ -1,2 +1,3 @@
-pub mod bot;
+pub mod client;
 pub mod handlers;
+pub mod services;
