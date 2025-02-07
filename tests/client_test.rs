@@ -8,7 +8,8 @@ mod tests {
   #[test]
   fn test_token_check() {
     dotenv().ok();
-    let token = env::var("DISCORD_BOT_TOKEN").expect("Expected a token in the environment");
-    assert_eq!(token, env::var("DISCORD_BOT_TOKEN").unwrap());
+    let test_token = env::var("DISCORD_BOT_TOKEN").unwrap();
+    let token = env::var("DISCORD_BOT_TOKEN").unwrap();
+    assert_eq!(token, test_token);
   }
 }

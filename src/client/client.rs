@@ -4,8 +4,9 @@ use dotenv::dotenv;
 use serenity::prelude::*;
 
 use crate::handlers::{
-  ping::TestHandler, 
-  ready::ReadyHandler
+  ping::PingHandler, 
+  ready::ReadyHandler,
+  test::TestHandler
 };
 
 #[tokio::main]
@@ -19,8 +20,9 @@ pub async fn discord_run() {
   | GatewayIntents::GUILD_MESSAGE_REACTIONS;
 
   let mut client = Client::builder(&token, intents)
-  .event_handler(TestHandler)
+  .event_handler(PingHandler)
   .event_handler(ReadyHandler)
+  .event_handler(TestHandler)
   .await
   .expect("Error creating client");
 
