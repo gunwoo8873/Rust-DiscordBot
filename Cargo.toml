@@ -1,11 +1,27 @@
 [package]
-name = "DiscordBot"
+name = "discord_bot"
 version = "0.1.0"
 edition = "2024"
 
+# DiscordBot
+[dependencies.serenity]
+default-features = false
+features = [
+    "builder",
+    "chrono",
+    "client",
+    "framework",
+    "gateway",
+    "http",
+    "model",
+    "standard_framework",
+    "utils",
+    "rustls_backend",
+]
+version = "0.12.4"
+
 [dependencies]
 # Discord
-serenity = { version = "0.12.4", default-features = false, features = ["client", "gateway", "rustls_backend", "model"] }
 
 # AWS
 # aws-config = { version = "1.5.16" }
