@@ -1,4 +1,7 @@
 # Added by cargo
 /target
+
 .env
+.env.test
+
 *.lock
