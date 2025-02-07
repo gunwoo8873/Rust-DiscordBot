@@ -1,9 +1,0 @@
-{
-  "AWS": {
-    "REGION": {},
-    "IDENTITY_POOL_ID": "us-east-1:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "USER_POOL_ID": "us-east-1_xxxxxxxxx",
-    "APP_CLIENT_ID": "xxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "API_URL": "https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev"
-  }
-}
