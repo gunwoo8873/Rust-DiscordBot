@@ -1,3 +1,2 @@
-pub mod ping;
+pub mod event;
 pub mod ready;
-pub mod test;
