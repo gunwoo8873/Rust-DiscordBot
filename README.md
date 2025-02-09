@@ -32,7 +32,7 @@
   ```
 
 ### Cargo lib
-* serenity : Discord bot for rust programing languageb
+* serenity : Discord bot for rust programing language
 * dotenv : read to .env file and need to add std::env
 * tokio : async thread feture
 
