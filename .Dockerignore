@@ -1,1 +1,8 @@
+# Rust files
 /target
+
+# Git files
+.gitignore
+
+# Bot files
+.env.example
