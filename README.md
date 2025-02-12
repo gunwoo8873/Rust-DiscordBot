@@ -12,14 +12,15 @@
 ### Discord
 * **Config**
   ```env
-  # Path : Discord-Bot/.env
+  # Path : /Discord-Bot/.env
   DISCORD_BOT_TOKEN=YOUR_DISCORD_BOT_TOKEN
+  GUILD_ID=YOUR_DISCORD_GUILD_ID
   ```
 
-### AWS
+### ~~AWS~~
 * **Config**
   ```json
-  // Path : Discord-Bot/src/service/config.json
+  // Path : /Discord-Bot/src/service/config.json
   {
     "AWS": {
       "REGION": "us-east-1",
