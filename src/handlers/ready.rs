@@ -18,9 +18,7 @@ impl EventHandler for ReadyHandler {
     if let Interaction::Command(command) = interaction {
       let content = match command.data.name.as_str() {
         "ping" => Some(commands::ping::run(&command.data.options())),
-        "uptime" => Some(commands::uptime::run(&command.data.options())),
-        "help" => Some(commands::help::run(&command.data.options())),
-        "atta" => Some(commands::attachmentinput::run(&command.data.options())),
+        // "help" => Some(commands::help::run(&command.data.options())),
         _ => Some("Not implemented : (".to_string()),
       };
 
@@ -40,7 +38,8 @@ impl EventHandler for ReadyHandler {
     if let Some(shard) = ready.shard {
       println!("{} is connected on shard {}/{}", ready.user.name, shard.id, shard.total);
     }
-
+    
+    // TODO (@PITLANE) : The guild id add to multi server in join feture
     let guild_id = GuildId::new(
       env::var("GUILD_ID")
       .expect("Expected GUILD_ID in environment")
@@ -51,10 +50,7 @@ impl EventHandler for ReadyHandler {
     let commands = guild_id
     .set_commands(&ctx.http, vec![
       commands::ping::register(),
-      commands::uptime::register(),
       commands::help::register(),
-      // commands::aws::register(),
-      commands::attachmentinput::register(),
     ])
     .await;
     

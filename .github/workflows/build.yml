@@ -1,0 +1,47 @@
+name: test actions
+
+on:
+  push:
+    branches: [ "master" ]
+    paths: [ ./test/*.rs ]
+  workflow_dispatch:
+
+env: 
+  CARGO_TERM_COLOR: always
+    
+jobs:
+  build:
+    name: Rust toolchain build
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: cations toolchainon
+        uses: actions-rs/toolchain@v1.0.6
+        with:
+          toolchain: nightly-2025-02-11
+          override: true
+          components: rustfmt, clippy
+
+      - name: Check rustup version
+        run : |
+          rustup --version
+
+  test:
+    name: Discord bot feture test
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: cargo check
+        uses: actions-rs/cargo@v1.0.1
+        with:
+          command: |
+            build --relase
+            check
+
+      - name: cargo test
+        uses: actions-rs/cargo@v1.0.1
+        with:
+          command: |
+            test

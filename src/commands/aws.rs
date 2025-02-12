@@ -6,6 +6,7 @@ pub fn register() -> CreateCommand {
   .description("AWS using for service control and checking for manager bot")
   .add_option(CreateCommandOption::new(
     CommandOptionType::String, "EC2", ""
+    
   ))
   .add_option(CreateCommandOption::new(
     CommandOptionType::String, "S3", ""
