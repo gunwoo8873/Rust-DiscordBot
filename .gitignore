@@ -1,7 +1,6 @@
 # Added by cargo
-/target
+target/
 
 .env
-.env.test
 
 *.lock
