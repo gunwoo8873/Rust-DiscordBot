@@ -1,4 +1,4 @@
-name: test actions
+name: build actions
 
 on:
   push:

@@ -1,3 +1,2 @@
-pub mod client;
-pub mod handlers;
+pub mod http;
 pub mod commands;

@@ -11,6 +11,7 @@ features = [
     "builder",
     "chrono",
     "client",
+    "collector",
     "framework",
     "gateway",
     "http",
@@ -26,9 +27,6 @@ features = ["full"]
 
 [dependencies.dotenv]
 version = "0.15.0"
-
-[dependencies.chrono]
-version = "0.4.39"
 
 [dependencies]
 # Discord

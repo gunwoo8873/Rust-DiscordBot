@@ -1,0 +1,9 @@
+appVersion: v2
+services:
+  application:
+    build: .
+    # prots:
+    volumes: 
+    environment:
+      - DISCORD_BOT_TOKEN=
+      - GUILD_ID=

@@ -6,14 +6,11 @@ use serenity::prelude::*;
 
 use tokio::time::sleep;
 
-use crate::handlers::{
-  // event::CommandHandler,
-  ready::ReadyHandler,
-};
+use crate::http::ready::Handler;
 
 
 #[tokio::main]
-pub async fn discord_run() {
+pub async fn run() {
   dotenv().ok();
 
   // Discord bot token
@@ -24,8 +21,8 @@ pub async fn discord_run() {
   //   | GatewayIntents::GUILD_MESSAGE_REACTIONS;
 
   // Client command handler [path : src/handlers]
-  let mut client = Client::builder(token, GatewayIntents::empty())
-  .event_handler(ReadyHandler)
+  let mut client = Client::builder(&token, GatewayIntents::empty())
+  .event_handler(Handler)
   .await
   .expect("Error creating handler");
 
@@ -33,8 +30,8 @@ pub async fn discord_run() {
 
   tokio::spawn(async move {
     loop {
-      // Discord bot run time date log get time setting is 30s -> 60s
-      sleep(Duration::from_secs(60)).await;
+      // Discord bot run time date log get time setting is 60s -> 120s
+      sleep(Duration::from_secs(120)).await;
 
       // Shard manager is current discord bot status
       let shard_runners = manager.runners.lock().await;
@@ -45,7 +42,7 @@ pub async fn discord_run() {
     }
   });
 
-  if let Err(why) = client.start_shards(2).await {
-    println!("Client error: {:?}", why);
+  if let Err(error) = client.start_shards(2).await {
+    println!("Client error: {:?}", error);
   }
 }

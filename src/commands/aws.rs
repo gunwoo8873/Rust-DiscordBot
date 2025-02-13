@@ -1,26 +1,39 @@
 use serenity::builder::{CreateCommand, CreateCommandOption};
 use serenity::model::application::CommandOptionType;
 
+// pub fn run(_options: &[ResolvedOption]) -> String {
+// }
+
 pub fn register() -> CreateCommand {
-  CreateCommand::new("aws")
-  .description("AWS using for service control and checking for manager bot")
-  .add_option(CreateCommandOption::new(
-    CommandOptionType::String, "EC2", ""
-    
-  ))
-  .add_option(CreateCommandOption::new(
-    CommandOptionType::String, "S3", ""
-  ))
-  .add_option(CreateCommandOption::new(
-    CommandOptionType::String, "EKS", ""
-  ))
-  .add_option(CreateCommandOption::new(
-    CommandOptionType::String, "IAM", ""
-  ))
-  .add_option(CreateCommandOption::new(
-    CommandOptionType::String, "VPC", ""
-  ))
-  .add_option(CreateCommandOption::new(
-    CommandOptionType::String, "Lambda", ""
-  ))
+  CreateCommand::new("aws").description("AWS service access control")
+  .add_option(CreateCommandOption::new(CommandOptionType::SubCommandGroup, "ec2", "EC2 관련 작업을 수행합니다.")
+    .add_sub_option(
+      CreateCommandOption::new(CommandOptionType::SubCommand, "status", "EC2 instance status check")
+    )
+    .add_sub_option(
+      CreateCommandOption::new(CommandOptionType::SubCommand, "start", "EC2 instance start")
+    )
+    .add_sub_option(
+      CreateCommandOption::new(CommandOptionType::SubCommand, "stop", "EC2 instance stop")
+    )
+    .add_sub_option(
+      CreateCommandOption::new(CommandOptionType::SubCommand, "delete", "EC2 instance Delete")
+    )
+  )
+  .add_option(CreateCommandOption::new(CommandOptionType::SubCommandGroup, "s3", "S3 관련 작업을 수행합니다.")
+    .add_sub_option(
+      CreateCommandOption::new(CommandOptionType::SubCommand, "list", "S3 bucket list load")
+    )
+    .add_sub_option(
+      CreateCommandOption::new(CommandOptionType::SubCommand, "upload", "S3 for file upload")
+    )
+  )
+  .add_option(CreateCommandOption::new(CommandOptionType::SubCommandGroup, "ecr", "ECR 관련 작업을 수행합니다.")
+    .add_sub_option(
+      CreateCommandOption::new(CommandOptionType::SubCommand, "list", "ECR repository list load")
+    )
+    .add_sub_option(
+      CreateCommandOption::new(CommandOptionType::SubCommand, "delete", "ECR repository delete")
+    )
+  )
 }

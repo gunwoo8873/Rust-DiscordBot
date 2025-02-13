@@ -10,7 +10,7 @@ env:
   CARGO_TERM_COLOR: always
     
 jobs:
-  build:
+  build_and_test:
     name: Rust project - latest
     runs-on: ubuntu-latest
     strategy:
