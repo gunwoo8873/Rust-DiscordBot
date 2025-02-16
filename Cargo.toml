@@ -1,0 +1,36 @@
+[package]
+name = "discord_bot"
+version = "0.1.0"
+edition = "2024"
+
+# DiscordBot
+[dependencies.serenity]
+default-features = false
+version = "0.12.4"
+features = [
+    "builder",
+    "chrono",
+    "client",
+    "collector",
+    "framework",
+    "gateway",
+    "http",
+    "model",
+    "standard_framework",
+    "utils",
+    "rustls_backend",
+]
+
+[dependencies.tokio]
+version = "1.43.0"
+features = ["full"]
+
+[dependencies.dotenv]
+version = "0.15.0"
+
+[dependencies]
+# Discord
+
+# AWS
+# aws-config = { version = "1.5.16" }
+# aws-sdk-ec2instanceconnect = { version = "1.58.0" }
