@@ -16,21 +16,24 @@
   DISCORD_BOT_TOKEN=YOUR_DISCORD_BOT_TOKEN
   GUILD_ID=YOUR_DISCORD_GUILD_ID
   RUST_LOG=debug
+
+  MYSQL_HOSTNAME=YOUR_MYSQL_HOSTNAME
+  MYSQL_PORT=YOUR_MYSQL_PROT
+  MYSLQ_PASSWORD=YOUR_MYSQL_PASSWORD
   ```
 
-### ~~AWS~~
+### AWS
 * **Config**
-  ```json
-  // Path : /Discord-Bot/src/service/config.json
-  {
-    "AWS": {
-      "REGION": "us-east-1",
-      "IDENTITY_POOL_ID": "us-east-1:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-      "USER_POOL_ID": "us-east-1_xxxxxxxxx",
-      "APP_CLIENT_ID": "xxxxxxxxxxxxxxxxxxxxxxxxxx",
-      "API_URL": "https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev"
-    }
-  }
+  ```config
+  # Path : /Discord-Bot/
+  [default]
+  region = YOUR_MAIN_AWS_REGION
+
+  [profile dev]
+  region = YOUR_DEV_AWS_REGION
+
+  [profile test]
+  region = YOUR_TEST_AWS_REGION
   ```
 
 ### Cargo lib
