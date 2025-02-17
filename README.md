@@ -17,9 +17,11 @@
   GUILD_ID=YOUR_DISCORD_GUILD_ID
   RUST_LOG=debug
 
-  MYSQL_HOSTNAME=YOUR_MYSQL_HOSTNAME
-  MYSQL_PORT=YOUR_MYSQL_PROT
-  MYSLQ_PASSWORD=YOUR_MYSQL_PASSWORD
+  MYSQL_HOSTNAME=YOUR_MYSQL_DB_HOSTNAME
+  MYSQL_PORT=YOUR_MYSQL_DB_PORT
+  MYSQL_USERNAME=YOUR_MYSQL_DB_USERNAME
+  MYSQL_PASSWORD=YOUR_MYSQL_DB_PASSWORD
+  MYSQL_DATABASE_NAME=YOUR_MYSQL_DB_NAME
   ```
 
 ### AWS
@@ -37,6 +39,7 @@
   ```
 
 ### Cargo lib
+* rustup : need to toolchain version is `nightly`
 * serenity : Discord bot for rust programing language
 * dotenv : read to .env file and need to add std::env
 * tokio : async thread feture
