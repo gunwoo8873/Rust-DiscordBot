@@ -1,4 +1,4 @@
-# Solo ETC Project
+# Discord bot and AWS resource control Project
 
 ## Project information
 * Member  
@@ -25,7 +25,7 @@
 ### AWS
 * **Config**
   ```config
-  # Path : /Discord-Bot/
+  # Path : /Discord-Bot/config
   [default]
   region = YOUR_MAIN_AWS_REGION
 
@@ -40,6 +40,7 @@
 * serenity : Discord bot for rust programing language
 * dotenv : read to .env file and need to add std::env
 * tokio : async thread feture
+* mysql : using for global slash command data save
 
 ```toml
 [dependencies.serenity]
@@ -65,5 +66,9 @@ features = ["full"]
 
 [dependencies.dotenv]
 version = "0.15.0"
+
+[dependencies.mysql]
+default-features = false
+version = "26.0.0"
 ```
 
