@@ -10,6 +10,7 @@
 
 ## Project useing for setup guide
 ### Discord
+> That Discord and MySQL database client connected 
 * **Config**
   ```env
   # Path : /Discord-Bot/.env
@@ -25,9 +26,10 @@
   ```
 
 ### AWS
+> To be reference web site is [AWS SDK rust](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/credentials.html)
 * **Config**
   ```config
-  # Path : /Discord-Bot/config
+  # Path : /Discord-Bot/config and ~/.ssh/config
   [default]
   region = YOUR_MAIN_AWS_REGION
 
@@ -46,6 +48,9 @@
 * mysql : using for global slash command data save
 
 ```toml
+# Path : ./discord_bot/Cargo.toml
+
+# Discord bot project base lib
 [dependencies.serenity]
 default-features = false
 version = "0.12.4"
@@ -63,15 +68,28 @@ features = [
     "rustls_backend",
 ]
 
+# Http protocol async feature lib
 [dependencies.tokio]
 version = "1.43.0"
 features = ["full"]
 
+# Read to .env file lib
 [dependencies.dotenv]
 version = "0.15.0"
 
-[dependencies.mysql]
+# Database async feature lib
+[dependencies.sqlx]
 default-features = false
-version = "26.0.0"
+version = "0.8.3"
+features = ["runtime-tokio", "mysql", "macros", "time"]
 ```
 
+## Project run cmd
+```bash
+# Path : ./discord_bot
+cargo build --release
+```
+
+```bash
+cargo run
+```
