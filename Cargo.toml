@@ -21,6 +21,10 @@ features = [
   "rustls_backend",
 ]
 
+[dependencies.sqlx]
+version = "0.8.3"
+features = ["runtime-tokio", "macros", "mysql", "time"]
+
 [dependencies.tokio]
 version = "1.43.0"
 features = ["full"]

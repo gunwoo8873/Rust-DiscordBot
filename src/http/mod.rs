@@ -1,2 +1,4 @@
 pub mod client;
-pub mod ready;
+mod ready;
+mod bot;
+mod mysql;
