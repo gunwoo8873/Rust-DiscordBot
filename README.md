@@ -25,6 +25,7 @@
 * dotenv : read to .env file and need to add std::env
 * tokio : async thread feture
 * mysql : using for global slash command data save
+
   ### Cargo.toml lib
   ```toml
   # Path : ./discord_bot/Cargo.toml
@@ -74,7 +75,7 @@
   ```
 
 ### Discord
-> That Discord and MySQL database client connected 
+> That Discord and MySQL database client connected
 * **Config**
   ```env
   # Path : /Discord-Bot/.env
@@ -92,10 +93,9 @@
   MYSQL_URL=YOUR_MYSQL_DB_URL
   ```
 
-* 
 
 ### AWS
-> To be reference web site is [AWS SDK rust](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/credentials.html)
+> To be reference web site is [AWS SDK Rust](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/credentials.html)
 * **Config**
   ```config
   # Path : /Discord-Bot/config and ~/.ssh/config
