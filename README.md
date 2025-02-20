@@ -1,26 +1,36 @@
-# Discord Bot and AWS Resource Control Project
+# Discord bot and AWS resource control Project
 
-## Project Information
-* **Member**  
+## Project information
+* Member  
   `PITLANE`
-* **Development Date**  
+* Dev date  
   `2025. 01. ~ **`
-* **Description**  
-  `This project is a Discord bot that checks the status of AWS cloud systems, built using Rust.`
+* Discriotion  
+  `This project is Discord bot and AWS cloud system status checking for on the rust language`
 
-## Project Setup Guide
+## Docker architecture
+<figure align="center">
+  <img src="./img/Docker-architecture.png" alt="" width=600>
+</figure>
 
-### Cargo Dependencies
-* **Rustup** : Requires `nightly` toolchain version.
-* **Serenity** : Discord bot framework for Rust.
-* **Dotenv** : Reads `.env` file and integrates with `std::env`.
-* **Tokio** : Provides async threading features.
-* **MySQL** : Used for storing global slash command data.
+## Discord architecture
+<figure align="center">
+  <img src="./img/Discord-architecture.png" alt="" width=600>
+</figure>
 
+## Project useing for setup guide
+### Cargo lib
+* rustup : need to toolchain version is `nightly`
+* serenity : Discord bot for rust programing language
+* dotenv : read to .env file and need to add std::env
+* tokio : async thread feture
+* mysql : using for global slash command data save
+
+  ### Cargo.toml lib
   ```toml
   # Path : ./discord_bot/Cargo.toml
 
-  # Discord bot dependencies
+  # Discord bot project base lib
   [dependencies.serenity]
   default-features = false
   version = "0.12.4"
@@ -38,27 +48,35 @@
       "rustls_backend",
   ]
 
-  # Async HTTP library
+  # Http protocol async feature lib
   [dependencies.tokio]
   version = "1.43.0"
   features = ["full"]
 
-  # Environment variable reader
+  # Read to .env file lib
   [dependencies.dotenv]
   version = "0.15.0"
 
-  # Async database client
+  # Database async feature lib
   [dependencies.sqlx]
   default-features = false
   version = "0.8.3"
   features = ["runtime-tokio", "mysql", "macros", "time"]
   ```
 
-  > This project connects a Discord bot with a MySQL database.
+  ## Project run cmd
+  ```bash
+  # Path : ./discord_bot
+  cargo build --release
+  ```
 
-### Configuration
-* Environment Variables Create a .env file in the Discord-Bot/ directory with the following content:
-  
+  ```bash
+  cargo run
+  ```
+
+### Discord
+> That Discord and MySQL database client connected
+* **Config**
   ```env
   # Path : /Discord-Bot/.env
   DISCORD_BOT_TOKEN=YOUR_DISCORD_BOT_TOKEN
@@ -70,37 +88,20 @@
   MYSQL_USERNAME=YOUR_MYSQL_DB_USERNAME
   MYSQL_PASSWORD=YOUR_MYSQL_DB_PASSWORD
   MYSQL_DATABASE_NAME=YOUR_MYSQL_DB_NAME
+
+  # Sub MySQL connection URL
+  MYSQL_URL=YOUR_MYSQL_DB_URL
   ```
 
-* AWS Configuration Configure AWS credentials by modifying the AWS CLI configuration file:
+
+### AWS
+> To be reference web site is [AWS SDK Rust](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/credentials.html)
+* **Config**
   ```config
-  # Path : /Discord-Bot/config and ~/.aws/config
+  # Path : /Discord-Bot/config and ~/.ssh/config
   [default]
-  region = YOUR_MAIN_AWS_REGION
-
-  [profile dev]
-  region = YOUR_DEV_AWS_REGION
-
-  [profile test]
-  region = YOUR_TEST_AWS_REGION
+  region = YOUR_USED_REGION
+  aws_access_key_id = YOUR_AWS_IAM_ACCESS_KEY
+  aws_secret_access_key = YOUR_AWS_IAM_SECRET_ACCESS_KEY
+  output = json
   ```
-  > This configuration sets the default AWS region and additional profiles for development and testing.
-
-### Build and Run
-* Build the project
-  ```bash
-  # Navigate to the project directory
-  cd ./discord_bot
-
-  # Build the project in release mode
-  cargo build --release
-  ```
-
-* Run the bot
-  ```bash
-  cargo run
-  ```
-  > Ensure that the .env file is properly configured before running the bot.
-
-## AWS SDK Reference
-* For more information on AWS SDK for Rust, refer to the official documentation: [AWS SDK Rust Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/credentials.html)
