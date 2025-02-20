@@ -20,11 +20,11 @@
 
 ## Project useing for setup guide
 ### Cargo lib
-* rustup : need to toolchain version is `nightly`
-* serenity : Discord bot for rust programing language
-* dotenv : read to .env file and need to add std::env
-* tokio : async thread feture
-* mysql : using for global slash command data save
+* **rustup** : need to toolchain version is `nightly`
+* **serenity** : Discord bot for rust programing language
+* **dotenv** : read to .env file and need to add std::env
+* **tokio** : async thread feture
+* **mysql** : using for global slash command data save
 
   ### Cargo.toml lib
   ```toml
