@@ -7,6 +7,7 @@
   `2025. 01. ~ **`
 * Discriotion  
   `This project is Discord bot and AWS cloud system status checking for on the rust language`
+> [Team Project : AWS Service bedrock agent](https://github.com/Byun-Sung-Ho/appCodeForRocket)
 
 ## Docker architecture
 <figure align="center">
