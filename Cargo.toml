@@ -8,17 +8,17 @@ edition = "2024"
 default-features = false
 version = "0.12.4"
 features = [
-    "builder",
-    "chrono",
-    "client",
-    "collector",
-    "framework",
-    "gateway",
-    "http",
-    "model",
-    "standard_framework",
-    "utils",
-    "rustls_backend",
+  "builder",
+  "chrono",
+  "client",
+  "collector",
+  "framework",
+  "gateway",
+  "http",
+  "model",
+  "standard_framework",
+  "utils",
+  "rustls_backend",
 ]
 
 [dependencies.tokio]
