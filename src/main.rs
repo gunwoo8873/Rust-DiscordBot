@@ -1,4 +1,5 @@
-use discord_bot::http::client;
+use discord_bot::http::client::run;
+
 fn main() {
-  client::run();
+  run();
 }
