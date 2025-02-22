@@ -7,23 +7,13 @@ use serenity::model::application::CommandOptionType;
 
 // Feture layout : Maincommand -> Subcommandgroup -> Subcommand
 pub fn register() -> CreateCommand {
-  CreateCommand::new("AWS").description("AWS Command")
-  .add_option(
-    CreateCommandOption::new(CommandOptionType::SubCommandGroup, "EC2", "EC2 Command")
-    .add_sub_option(
-      CreateCommandOption::new(CommandOptionType::SubCommandGroup, "status", "EC2 instance status check")
-      .add_sub_option(
-        CreateCommandOption::new(CommandOptionType::SubCommand, "start", "Start EC2 instance")
-      )
-      .add_sub_option(
-        CreateCommandOption::new(CommandOptionType::SubCommand, "restart", "restart EC2 instance")
-      )
-      .add_sub_option(
-        CreateCommandOption::new(CommandOptionType::SubCommand, "stop", "stop EC2 instance")
-      )
-      .add_sub_option(
-        CreateCommandOption::new(CommandOptionType::SubCommand, "delete", "delete EC2 instance")
-      )
+  CreateCommand::new("aws").description("AWS Command")
+  .add_option(CreateCommandOption::new(CommandOptionType::SubCommandGroup, "group_a", "Group A Command")
+    .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "sub_a", "Sub A")
+      .add_sub_option(CreateCommandOption::new(CommandOptionType::String, "param_a", "Param A"))
+    )
+    .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "sub_b", "Sub B")
+      .add_sub_option(CreateCommandOption::new(CommandOptionType::String, "param_a", "Param A"))
     )
   )
 }
