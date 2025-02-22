@@ -7,7 +7,8 @@
   `2025. 01. ~ **`
 * Discriotion  
   `This project is Discord bot and AWS cloud system status checking for on the rust language`
-> [Team Project : AWS Service bedrock agent](https://github.com/Byun-Sung-Ho/appCodeForRocket)
+> [1. Team Project : AWS Service bedrock agent](https://github.com/Byun-Sung-Ho/appCodeForRocket)  
+> [2. Discord-Bot NET.ver](https://github.com/gunwoo8873/NET-DiscordBot)
 
 ## Docker architecture
 <figure align="center">
@@ -77,32 +78,34 @@
 
 ### Discord
 > That Discord and MySQL database client connected
-* **Config**
-  ```env
-  # Path : /Discord-Bot/.env
-  DISCORD_BOT_TOKEN=YOUR_DISCORD_BOT_TOKEN
-  GUILD_ID=YOUR_DISCORD_GUILD_ID
-  RUST_LOG=debug
 
-  MYSQL_HOSTNAME=YOUR_MYSQL_DB_HOSTNAME
-  MYSQL_PORT=YOUR_MYSQL_DB_PORT
-  MYSQL_USERNAME=YOUR_MYSQL_DB_USERNAME
-  MYSQL_PASSWORD=YOUR_MYSQL_DB_PASSWORD
-  MYSQL_DATABASE_NAME=YOUR_MYSQL_DB_NAME
-
-  # Sub MySQL connection URL
-  MYSQL_URL=YOUR_MYSQL_DB_URL
-  ```
+  * ### Config
+    ```env
+    # Path : /Discord-Bot/.env
+    DISCORD_BOT_TOKEN=YOUR_DISCORD_BOT_TOKEN
+    GUILD_ID=YOUR_DISCORD_GUILD_ID
+    RUST_LOG=debug
+  
+    MYSQL_HOSTNAME=YOUR_MYSQL_DB_HOSTNAME
+    MYSQL_PORT=YOUR_MYSQL_DB_PORT
+    MYSQL_USERNAME=YOUR_MYSQL_DB_USERNAME
+    MYSQL_PASSWORD=YOUR_MYSQL_DB_PASSWORD
+    MYSQL_DATABASE_NAME=YOUR_MYSQL_DB_NAME
+  
+    # Sub MySQL connection URL
+    MYSQL_URL=YOUR_MYSQL_DB_URL
+    ```
 
 
 ### AWS
 > To be reference web site is [AWS SDK Rust](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/credentials.html)
-* **Config**
-  ```config
-  # Path : /Discord-Bot/config and ~/.ssh/config
-  [default]
-  region = YOUR_USED_REGION
-  aws_access_key_id = YOUR_AWS_IAM_ACCESS_KEY
-  aws_secret_access_key = YOUR_AWS_IAM_SECRET_ACCESS_KEY
-  output = json
-  ```
+
+  * ### Config
+    ```config
+    # Path : /Discord-Bot/config and ~/.ssh/config
+    [default]
+    region = YOUR_USED_REGION
+    aws_access_key_id = YOUR_AWS_IAM_ACCESS_KEY
+    aws_secret_access_key = YOUR_AWS_IAM_SECRET_ACCESS_KEY
+    output = json
+    ```
