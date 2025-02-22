@@ -13,12 +13,12 @@
 * Discriotion :  
   This project is Discord bot and AWS cloud system status checking for on the rust language
 * Docs :  
-  [1. Slash Commands Docs](./Docs/Slash_Command.md)  
   [Serenity Reference](https://github.com/serenity-rs)  
-  
-> [1. Team Project : AWS Service bedrock agent](https://github.com/Byun-Sung-Ho/appCodeForRocket)  
-> [2. Discord-Bot NET.ver](https://github.com/gunwoo8873/NET-DiscordBot)
-
+  [Discord Document](https://discord.com/developers/docs/intro)  
+  [1. Slash Commands Docs](./Docs/Slash_Command.md)  
+* Other :  
+  [1. Team Project : AWS Service bedrock agent](https://github.com/Byun-Sung-Ho/appCodeForRocket)  
+  [2. Discord-Bot NET.ver](https://github.com/gunwoo8873/NET-DiscordBot)
 
 ## Docker architecture
 <figure align="center">
