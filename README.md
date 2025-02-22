@@ -19,7 +19,7 @@
   <img src="./img/Discord-architecture.png" alt="" width=600>
 </figure>
 
-## Project useing for setup guide
+## Getting start guide
 ### Cargo lib
 * **rustup** : need to toolchain version is `nightly`
 * **serenity** : Discord bot for rust programing language
