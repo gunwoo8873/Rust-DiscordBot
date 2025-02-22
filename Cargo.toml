@@ -29,12 +29,9 @@ features = [
 version = "1.43.0"
 features = ["full"]
 
-[dependencies.dotenv]
-version = "0.15.0"
-
 [dependencies]
-# Discord
-
+dotenv = "0.15.0"
 # AWS
-# aws-config = { version = "1.5.16" }
-# aws-sdk-ec2instanceconnect = { version = "1.58.0" }
+aws-config = { version = "1.5.16" }
+aws-sdk-ec2 = { version = "1.110.0" }
+aws-sdk-s3 = { version = "1.76.0" }
