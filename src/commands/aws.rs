@@ -21,7 +21,7 @@ pub fn register() -> CreateCommand {
   .add_option(CreateCommandOption::new(CommandOptionType::SubCommandGroup, "ec2", "EC2 Instance Command")
     .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "list", "Instance list"))
     .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "status", "Instance Status")
-      .add_sub_option(CreateCommandOption::new(CommandOptionType::Number, "instance_id", "Instance ID")
+      .add_sub_option(CreateCommandOption::new(CommandOptionType::Number, "instance_number", "Instance Number")
         .required(true)
       )
       .add_sub_option(CreateCommandOption::new(CommandOptionType::String, "actions", "Instance Actions")
@@ -36,13 +36,13 @@ pub fn register() -> CreateCommand {
   .add_option(CreateCommandOption::new(CommandOptionType::SubCommandGroup, "s3", "S3 Bucket Command")
     .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "list", "S3 Bucket list"))
     .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "create", "S3 Bucket Create")
-    //
+      .add_sub_option(CreateCommandOption::new(CommandOptionType::String, "bucketname", "S3 Bucket name create").required(true))
     )
     .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "update", "S3 Bucket update")
-    //
+      .add_sub_option(CreateCommandOption::new(CommandOptionType::String, "bucketname", "S3 Bucket name to update").required(true))
     )
     .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "delete", "S3 Bucket delete")
-    //
+      .add_sub_option(CreateCommandOption::new(CommandOptionType::String, "bucketname", "S3 Bucket name to delete").required(true))
     )
   )
   .add_option(CreateCommandOption::new(CommandOptionType::SubCommandGroup, "ecr", "ECR Registry Command")

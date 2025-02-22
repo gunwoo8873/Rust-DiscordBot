@@ -1,17 +1,17 @@
 use std::env;
 use std::time::Duration;
 use dotenv::dotenv;
-
 use serenity::prelude::*;
-
 use tokio::time::sleep;
-
 use crate::http::ready::Handler;
-
+use crate::http::aws_client::aws_run;
 
 #[tokio::main]
 pub async fn run() {
   dotenv().ok();
+
+  // AWS Client run and get config
+  aws_run().await;
 
   // Discord bot token
   let token = env::var("DISCORD_BOT_TOKEN").expect("Expected a token in the environment");
