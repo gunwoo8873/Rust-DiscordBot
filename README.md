@@ -15,7 +15,7 @@
 * Docs :  
   [Serenity Reference](https://github.com/serenity-rs)  
   [Discord Document](https://discord.com/developers/docs/intro)  
-  [1. Slash Commands Docs](./Docs/Slash_Command.md)  
+  [1. Slash Commands sample](./Docs/Slash_Command.md)  
 * Other :  
   [1. Team Project : AWS Service bedrock agent](https://github.com/Byun-Sung-Ho/appCodeForRocket)  
   [2. Discord-Bot NET.ver](https://github.com/gunwoo8873/NET-DiscordBot)
