@@ -71,12 +71,13 @@
   features = ["runtime-tokio", "mysql", "macros", "time"]
   ```
 
-  ## Project run cmd
+  ### Project build
   ```bash
   # Path : ./discord_bot
   cargo build --release
   ```
 
+  ### Local application run 
   ```bash
   cargo run
   ```
