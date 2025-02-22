@@ -89,10 +89,12 @@
   * ### Config
     ```env
     # Path : /Discord-Bot/.env
+    # Main Discord bot connection variables
     DISCORD_BOT_TOKEN=YOUR_DISCORD_BOT_TOKEN
     GUILD_ID=YOUR_DISCORD_GUILD_ID
     RUST_LOG=debug
-  
+
+    # Main MySQL connection variables
     MYSQL_HOSTNAME=YOUR_MYSQL_DB_HOSTNAME
     MYSQL_PORT=YOUR_MYSQL_DB_PORT
     MYSQL_USERNAME=YOUR_MYSQL_DB_USERNAME
@@ -111,8 +113,34 @@
     ```config
     # Path : /Discord-Bot/config and ~/.ssh/config
     [default]
-    region = YOUR_USED_REGION
+    region = YOUR_MAIN_BASE_REGION
+    output = json
+
+    [profile.dev]
+    region = YOUR_DEV_BASE_REGION
     aws_access_key_id = YOUR_AWS_IAM_ACCESS_KEY
     aws_secret_access_key = YOUR_AWS_IAM_SECRET_ACCESS_KEY
     output = json
+
+    [profile.release]
+    region = YOUR_RELEASE_BASE_REGION
+    aws_access_key_id = YOUR_AWS_IAM_ACCESS_KEY
+    aws_secret_access_key = YOUR_AWS_IAM_SECRET_ACCESS_KEY
+    output = json
+    
+    [profile.discord-bot]
+    region = YOUR_DISCORD-BOT_BASE_REGION
+    aws_access_key_id = YOUR_AWS_IAM_ACCESS_KEY
+    aws_secret_access_key = YOUR_AWS_IAM_SECRET_ACCESS_KEY
+    output = json
+    ```
+    
+  * ### AWS config prifle list CLI
+    ```bash
+    aws configure list-profiles
+    ```
+
+  * ### AWS config profile use CLI
+    ```bash
+
     ```
