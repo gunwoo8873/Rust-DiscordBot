@@ -118,8 +118,6 @@
 
     [profile.dev]
     region = YOUR_DEV_BASE_REGION
-    aws_access_key_id = YOUR_AWS_IAM_ACCESS_KEY
-    aws_secret_access_key = YOUR_AWS_IAM_SECRET_ACCESS_KEY
     output = json
 
     [profile.release]
