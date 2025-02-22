@@ -2,6 +2,7 @@
 
 <figure align="center">
   <img src="./img/Discord-bot-slashcommand.png" alt="" width=600>
+  <img src="./img/Discord-bot-slashcommand-input.png" alt="" width=600>
 </figure>
 
 ## Project information
