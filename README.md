@@ -1,12 +1,13 @@
 # Discord bot and AWS resource control Project
 
 ## Project information
-* Member  
-  `PITLANE`
-* Dev date  
-  `2025. 01. ~ **`
-* Discriotion  
-  `This project is Discord bot and AWS cloud system status checking for on the rust language`
+* Member :  
+  [PITLANE](https://github.com/gunwoo8873), [zxcxz01](https://github.com/zxcxz01), [sssoeun](https://github.com/sssoeun), [Byun-Sung-Ho](https://github.com/Byun-Sung-Ho)
+* Dev date :  
+  2025. 01. ~ **
+* Discriotion :  
+  This project is Discord bot and AWS cloud system status checking for on the rust language
+  
 > [1. Team Project : AWS Service bedrock agent](https://github.com/Byun-Sung-Ho/appCodeForRocket)  
 > [2. Discord-Bot NET.ver](https://github.com/gunwoo8873/NET-DiscordBot)
 
