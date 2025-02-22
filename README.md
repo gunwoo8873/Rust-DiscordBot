@@ -13,7 +13,7 @@
 * Discriotion :  
   This project is Discord bot and AWS cloud system status checking for on the rust language
 * Docs :  
-  [Slash Commands Docs](./Docs/Slash_Command.md)
+  [1. Slash Commands Docs](./Docs/Slash_Command.md)  
   [Serenity Reference](https://github.com/serenity-rs)  
   
 > [1. Team Project : AWS Service bedrock agent](https://github.com/Byun-Sung-Ho/appCodeForRocket)  
