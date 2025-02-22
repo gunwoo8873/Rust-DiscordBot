@@ -1,5 +1,9 @@
 # Discord bot and AWS resource control Project
 
+<figure align="center">
+  <img src="./img/Discord-bot-slashcommand.png" alt="" width=600>
+</figure>
+
 ## Project information
 * Member :  
   [PITLANE](https://github.com/gunwoo8873), [zxcxz01](https://github.com/zxcxz01), [sssoeun](https://github.com/sssoeun), [Byun-Sung-Ho](https://github.com/Byun-Sung-Ho)
