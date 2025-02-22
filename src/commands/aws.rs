@@ -1,41 +1,50 @@
+use std::collections::HashMap;
+use std::sync::{Arc, Mutex};
+
 use serenity::builder::{CreateCommand, CreateCommandOption};
 use serenity::model::application::CommandOptionType;
+use serenity::prelude::*;
 
 // pub fn run(_options: &[ResolvedOption]) -> String {
   
 // }
 
+struct InstanceMap;
+
+impl TypeMapKey for InstanceMap {
+  type Value = Arc<Mutex<HashMap<u64, String>>>;
+}
+
 // Feture layout : Maincommand -> Subcommandgroup -> Subcommand
 pub fn register() -> CreateCommand {
   CreateCommand::new("aws").description("AWS service access control")
-  .add_option(CreateCommandOption::new(CommandOptionType::SubCommandGroup, "ec2", "EC2 관련 작업을 수행합니다.")
-    .add_sub_option(
-      CreateCommandOption::new(CommandOptionType::SubCommand, "status", "EC2 instance status check")
-    )
-    .add_sub_option(
-      CreateCommandOption::new(CommandOptionType::SubCommand, "start", "EC2 instance start")
-    )
-    .add_sub_option(
-      CreateCommandOption::new(CommandOptionType::SubCommand, "stop", "EC2 instance stop")
-    )
-    .add_sub_option(
-      CreateCommandOption::new(CommandOptionType::SubCommand, "delete", "EC2 instance Delete")
-    )
-  )
-  .add_option(CreateCommandOption::new(CommandOptionType::SubCommandGroup, "s3", "S3 관련 작업을 수행합니다.")
-    .add_sub_option(
-      CreateCommandOption::new(CommandOptionType::SubCommand, "list", "S3 bucket list load")
-    )
-    .add_sub_option(
-      CreateCommandOption::new(CommandOptionType::SubCommand, "upload", "S3 for file upload")
+  .add_option(CreateCommandOption::new(CommandOptionType::SubCommandGroup, "ec2", "EC2 Instance Command")
+    .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "list", "Instance list"))
+    .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "status", "Instance Status")
+      .add_sub_option(CreateCommandOption::new(CommandOptionType::Number, "instance_id", "Instance ID")
+        .required(true)
+      )
+      .add_sub_option(CreateCommandOption::new(CommandOptionType::String, "actions", "Instance Actions")
+        .add_string_choice("start", "Start Instance")
+        .add_string_choice("stop", "Stop Instance")
+        .add_string_choice("reboot", "Reboot Instance")
+        .add_string_choice("terminate", "Terminate Instance")
+        .required(true)
+      )
     )
   )
-  .add_option(CreateCommandOption::new(CommandOptionType::SubCommandGroup, "ecr", "ECR 관련 작업을 수행합니다.")
-    .add_sub_option(
-      CreateCommandOption::new(CommandOptionType::SubCommand, "list", "ECR repository list load")
+  .add_option(CreateCommandOption::new(CommandOptionType::SubCommandGroup, "s3", "S3 Bucket Command")
+    .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "list", "S3 Bucket list"))
+    .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "create", "S3 Bucket Create")
+    //
     )
-    .add_sub_option(
-      CreateCommandOption::new(CommandOptionType::SubCommand, "delete", "ECR repository delete")
+    .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "update", "S3 Bucket update")
+    //
     )
+    .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "delete", "S3 Bucket delete")
+    //
+    )
+  )
+  .add_option(CreateCommandOption::new(CommandOptionType::SubCommandGroup, "ecr", "ECR Registry Command")
   )
 }
