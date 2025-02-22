@@ -111,7 +111,7 @@
 
   * ### Config
     ```config
-    # Path : /Discord-Bot/config and ~/.ssh/config
+    # Path : ~/.ssh/config
     [default]
     region = YOUR_MAIN_BASE_REGION
     output = json
@@ -124,15 +124,30 @@
 
     [profile.release]
     region = YOUR_RELEASE_BASE_REGION
-    aws_access_key_id = YOUR_AWS_IAM_ACCESS_KEY
-    aws_secret_access_key = YOUR_AWS_IAM_SECRET_ACCESS_KEY
     output = json
     
     [profile.discord-bot]
     region = YOUR_DISCORD-BOT_BASE_REGION
+    output = json
+    ```
+
+    ```config
+    # Path : ~/.aws/credentials
+    [default]
     aws_access_key_id = YOUR_AWS_IAM_ACCESS_KEY
     aws_secret_access_key = YOUR_AWS_IAM_SECRET_ACCESS_KEY
-    output = json
+    
+    [dev]
+    aws_access_key_id = YOUR_AWS_IAM_ACCESS_KEY
+    aws_secret_access_key = YOUR_AWS_IAM_SECRET_ACCESS_KEY
+
+    [release]
+    aws_access_key_id = YOUR_AWS_IAM_ACCESS_KEY
+    aws_secret_access_key = YOUR_AWS_IAM_SECRET_ACCESS_KEY
+
+    [discord-bot]
+    aws_access_key_id = YOUR_AWS_IAM_ACCESS_KEY
+    aws_secret_access_key = YOUR_AWS_IAM_SECRET_ACCESS_KEY
     ```
     
   * ### AWS config prifle list CLI
