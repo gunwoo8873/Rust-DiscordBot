@@ -1,25 +1,24 @@
-use std::collections::HashMap;
-use std::sync::{Arc, Mutex};
-
 use serenity::builder::{CreateCommand, CreateCommandOption};
-use serenity::model::application::CommandOptionType;
-use serenity::prelude::*;
+use serenity::model::application::{CommandOptionType, ResolvedOption, ResolvedValue};
 
-// pub fn run(_options: &[ResolvedOption]) -> String {
+// pub fn response(_options: &[ResolvedOption]) -> String {
   
 // }
 
-struct InstanceMap;
-
-impl TypeMapKey for InstanceMap {
-  type Value = Arc<Mutex<HashMap<u64, String>>>;
-}
-
 // Feture layout : Maincommand -> Subcommandgroup -> Subcommand
-pub fn register() -> CreateCommand {
+pub fn request() -> CreateCommand {
   CreateCommand::new("aws").description("AWS service access control")
+  .add_option(CreateCommandOption::new(CommandOptionType::SubCommand, "region", "Current Region"))
   .add_option(CreateCommandOption::new(CommandOptionType::SubCommandGroup, "ec2", "EC2 Instance Command")
-    .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "list", "Instance list"))
+    .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "list", "Instance list")
+      .add_sub_option(CreateCommandOption::new(CommandOptionType::String, "filter", "Instance scale filter")
+        .add_string_choice("all", "All Instance")
+        .add_string_choice("running", "Running Instance")
+        .add_string_choice("stopped", "Stopped Instance")
+        .add_string_choice("terminated", "Terminated Instance")
+        .required(true)
+      )
+    )
     .add_sub_option(CreateCommandOption::new(CommandOptionType::SubCommand, "status", "Instance Status")
       .add_sub_option(CreateCommandOption::new(CommandOptionType::Number, "instance_number", "Instance Number")
         .required(true)
