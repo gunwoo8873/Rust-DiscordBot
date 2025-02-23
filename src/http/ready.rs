@@ -17,7 +17,8 @@ impl EventHandler for Handler {
     // Slash command options
     if let Interaction::Command(command) = interaction {
       let content = match command.data.name.as_str() {
-        "ping" => Some(commands::ping::run(&command.data.options())),
+        "ping" => Some(commands::ping::response(&command.data.options())),
+        // "aws" => Some(commands::aws::run(&command.data.options())),
         _ => Some("Not implemented : (".to_string()),
       };
 
@@ -48,8 +49,8 @@ impl EventHandler for Handler {
 
     let commands = guild_id
     .set_commands(&ctx.http, vec![
-      commands::ping::register(),
-      commands::aws::register(),
+      commands::ping::request(),
+      commands::aws::request(),
       // commands::test_command::register(),
     ])
     .await;
