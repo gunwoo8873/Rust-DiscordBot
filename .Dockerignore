@@ -1,2 +1,11 @@
+# Added by cargo
+.github/
+
+.env
+config
+*.lock
 target/
-tests/
+
+img/
+Dosc/
+LISENCE
