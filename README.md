@@ -163,12 +163,12 @@
   * ### AWS CLI Install
     [AWS CLI](https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/getting-started-install.html)  
     
-  * ### AWS config prifle list CLI
+  * ### AWS config prifle list command
     ```bash
     aws configure list-profiles
     ```
 
-  * ### AWS config profile use CLI
+  * ### AWS Instance JSON format output command
     ```bash
-
+    aws ec2 describe-instances
     ```
