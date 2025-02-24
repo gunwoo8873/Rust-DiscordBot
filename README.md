@@ -1,10 +1,14 @@
 # Discord bot and AWS resource control Project
 
+<figure align="center">
+  <img src="./img/Discord-bot-slashcommand.png" alt="" width=600>
+  <img src="./img/Discord-bot-slashcommand-input.png" alt="" width=600>
+</figure>
+
 > [!WARNING]
 > **Current in development to test version**  
 > **Errors may occur while using it, and do not push the .env file to the github repository**  
 > **Make your Discord bot token, channel ID and AWS all config private or use a database to verify security**
-
 
 ### 💡 **Why Rust?**
 - **High Performance and Memory Safety**: Rust provides **high-performance asynchronous processing** 
@@ -13,11 +17,6 @@
   for fast and stable bot performance.
 - **Cloud Integration**: Integrated with **AWS SDK for Rust** to control **EC2 instances** securely using **IAM Role** 
   and **temporary security tokens**.
-
-<figure align="center">
-  <img src="./img/Discord-bot-slashcommand.png" alt="" width=600>
-  <img src="./img/Discord-bot-slashcommand-input.png" alt="" width=600>
-</figure>
 
 ## Project information
 * Member :  
