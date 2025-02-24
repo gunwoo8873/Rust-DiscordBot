@@ -1,0 +1,29 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: likelion-eks
+  region: us-west-2
+
+vpc:
+  id: vpc-04d10b85913f5fd74
+  securityGroup: sg-091870bae375108ca  # 클러스터 보안 그룹 추가
+  subnets:
+    private:
+      us-west-2a: { id: subnet-0081a40a1da031317 }
+      us-west-2b: { id: subnet-0f1920632991e18b3 }
+      us-west-2c: { id: subnet-09450b063d183dbed }
+
+managedNodeGroups:
+  - name: eks-nodegroup
+    instanceTypes: ["t3.medium"]
+    minSize: 3
+    maxSize: 3
+    desiredCapacity: 3
+    amiFamily: AmazonLinux2  # 최신 EKS 최적화 AMI 자동 선택
+    privateNetworking: true  # ✅ Private 서브넷 사용 강제
+    securityGroups:
+      attachIDs:
+        - sg-067af8565ff50d4ac  # 기존 노드 보안 그룹 유지
+    iam:
+      instanceRoleARN: arn:aws:iam::495599735720:role/AmazonEKSAutoNodeRole  # 기존 IAM 역할 명시
