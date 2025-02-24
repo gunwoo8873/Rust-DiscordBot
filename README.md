@@ -15,7 +15,7 @@
   [PITLANE](https://github.com/gunwoo8873), [zxcxz01](https://github.com/zxcxz01), [sssoeun](https://github.com/sssoeun), [Byun-Sung-Ho](https://github.com/Byun-Sung-Ho)
 * Dev date :  
   2025. 01. ~ **
-* Discriotion :  
+* Descriotion :  
   This project is Discord bot and AWS cloud system status checking for on the rust language
 * Docs :  
   [Serenity Reference](https://github.com/serenity-rs)  
