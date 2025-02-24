@@ -1,5 +1,10 @@
 # Discord bot and AWS resource control Project
 
+> [!WARNING]
+> **Current in development to test version**  
+> **Errors may occur while using it, and do not push the .env file to the github repository**  
+> **Make your Discord bot token and channel ID private or use a database to verify security**
+
 <figure align="center">
   <img src="./img/Discord-bot-slashcommand.png" alt="" width=600>
   <img src="./img/Discord-bot-slashcommand-input.png" alt="" width=600>
@@ -16,9 +21,11 @@
   [Serenity Reference](https://github.com/serenity-rs)  
   [Discord Document](https://discord.com/developers/docs/intro)  
   [1. Slash Commands sample](./Docs/Slash_Command.md)  
-* Other :  
-  [1. Team Project : AWS Service bedrock agent](https://github.com/Byun-Sung-Ho/appCodeForRocket)  
-  [2. Discord-Bot NET.ver](https://github.com/gunwoo8873/NET-DiscordBot)
+
+> [!NOTE]
+> **Want do looking for other projects click to url link**  
+> [1. Team Project : AWS Service bedrock agent](https://github.com/Byun-Sung-Ho/appCodeForRocket)  
+> [2. Discord-Bot NET.ver](https://github.com/gunwoo8873/NET-DiscordBot)
 
 ## Docker architecture
 <figure align="center">
@@ -39,6 +46,7 @@
 * **mysql** : using for global slash command data save
 
   ### Cargo.toml lib
+  
   ```toml
   # Path : ./discord_bot/Cargo.toml
 
