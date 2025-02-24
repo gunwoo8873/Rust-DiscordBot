@@ -3,7 +3,7 @@
 > [!WARNING]
 > **Current in development to test version**  
 > **Errors may occur while using it, and do not push the .env file to the github repository**  
-> **Make your Discord bot token, channel ID and AWS all config data private or use a database to verify security**
+> **Make your Discord bot token, channel ID and AWS all config private or use a database to verify security**
 
 <figure align="center">
   <img src="./img/Discord-bot-slashcommand.png" alt="" width=600>
