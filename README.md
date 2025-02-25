@@ -90,6 +90,12 @@
   default-features = false
   version = "0.8.3"
   features = ["runtime-tokio", "mysql", "macros", "time"]
+
+  # AWS
+  aws-config = { version = "1.5.16" }
+  aws-sdk-config = { version = "1.62.0" }
+  aws-sdk-ec2 = { version = "1.110.0" }
+  aws-sdk-s3 = { version = "1.76.0" }
   ```
 
   ### Project build
