@@ -26,4 +26,4 @@ managedNodeGroups:
       attachIDs:
         - sg-067af8565ff50d4ac  # 기존 노드 보안 그룹 유지
     iam:
-      instanceRoleARN: arn:aws:iam::495599735720:role/AmazonEKSAutoNodeRole  # 기존 IAM 역할 명시
+      instanceRoleARN: arn:aws:iam::YOUR_IAM_ROLE_ARN  # 기존 IAM 역할 명시

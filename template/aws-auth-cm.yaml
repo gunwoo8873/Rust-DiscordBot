@@ -5,13 +5,13 @@ metadata:
   namespace: kube-system
 data:
   mapRoles: |
-    - rolearn: arn:aws:iam::495599735720:role/AmazonEKSAutoClusterRole
+    - rolearn: arn:aws:iam::YOUR_IAM_ROLE_ARN
       username: system:node:{{EC2PrivateDNSName}}
       groups:
         - system:bootstrappers
         - system:nodes
   mapUsers: |
-    - userarn: arn:aws:iam::495599735720:user/soeun
+    - userarn: arn:aws:iam::YOUR_IAM_ROLE_ARN
       username: admin
       groups:
         - system:masters

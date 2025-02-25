@@ -39,7 +39,6 @@ impl EventHandler for Handler {
       println!("{} is connected on shard {}/{}", ready.user.name, shard.id, shard.total);
     }
     
-    // TODO (@PITLANE) : The guild id add to multi server in join feture
     let guild_id = GuildId::new(
       env::var("GUILD_ID")
       .expect("Expected GUILD_ID in environment")
@@ -51,6 +50,9 @@ impl EventHandler for Handler {
     .set_commands(&ctx.http, vec![
       commands::ping::request(),
       commands::aws::request(),
+      // commands::aws::ec2::request(),
+      // commands::aws::ecr::request(),
+      // commands::aws::s3::request(),
       // commands::test_command::register(),
     ])
     .await;
