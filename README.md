@@ -21,23 +21,24 @@
 ## Project information
 * **Member :**  
   [PITLANE](https://github.com/gunwoo8873), [zxcxz01](https://github.com/zxcxz01), [sssoeun](https://github.com/sssoeun), [Byun-Sung-Ho](https://github.com/Byun-Sung-Ho)
+
 * **Dev date :**  
   2025. 01. ~ **
-  2026. 
+ 
 * **Descriotion :**  
   This project is Discord bot and AWS cloud system status checking for on the rust language
 
 * **Docs :**  
-  [Serenity Reference](https://github.com/serenity-rs)  
-  [Discord Document](https://discord.com/developers/docs/intro)  
-  [1. Slash Commands sample](./Docs/Slash_Command.md)  
+  [1. Serenity Reference](https://github.com/serenity-rs)  
+  [2. Discord Document](https://discord.com/developers/docs/intro)  
+  [3. Project Docs](./Docs/)
 
 > [!NOTE]
 > **Want do looking for other projects click to url link**  
 > [1. Team Project : AWS Service bedrock agent](https://github.com/Byun-Sung-Ho/appCodeForRocket)  
 > [2. Discord-Bot NET.ver](https://github.com/gunwoo8873/NET-DiscordBot)
 >
-> **you want do supporter channel is click to link**  
+> **You want do supporter channel is click to link**  
 > [Discord Surpporter channel](https://discord.gg/Ed9J5ueqUx)
 
 ## Docker architecture
