@@ -7,14 +7,16 @@ RUN rustup default nightly
 WORKDIR /usr/src/Discord-Bot
 COPY . .
 
-VOLUME [ "/usr/src/Discord-Bot/data" ]
+#### Volume commented
+# VOLUME [ "/usr/src/Discord-Bot/data" ]
 
 RUN cargo install --path .
 RUN cargo build --release
 
 CMD ["cargo", "run", "--release"]
-# Note : Current dockerfile is image size of 3.56GB
-#        but i think dockerfile sizing minimal size object of 2GB down
+
+# Issue : Current docker image size is min 3.49GB and max 20.64GB very high
+
 #######################################################################
 # Current size of image :
 # a1.0.0 : size : 3.49GB  | ver.bullsys

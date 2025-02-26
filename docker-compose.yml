@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  discord-bot:
+    image: choigunwoo/discord-bot:a1.0.4
+    container_name: discord_bot_app
+    depends_on:
+      - mysql
+    env_file:
+      - .env
+    networks:
+      - discord_network
+#####################################################################################
+  mysql:
+    image: mysql:lts
+    container_name: discord_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: meat9563
+      MYSQL_DATABASE: discord_bot
+      TZ: Asia/Seoul
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - discord_network
+networks:
+  discord_network:
+
+volumes:
+  mysql_data:

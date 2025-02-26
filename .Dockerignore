@@ -5,7 +5,6 @@
 .gitignore
 
 # Rust ignore files
-config
 target
 *.lock
 
