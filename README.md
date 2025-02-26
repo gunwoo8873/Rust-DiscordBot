@@ -36,6 +36,9 @@
 > **Want do looking for other projects click to url link**  
 > [1. Team Project : AWS Service bedrock agent](https://github.com/Byun-Sung-Ho/appCodeForRocket)  
 > [2. Discord-Bot NET.ver](https://github.com/gunwoo8873/NET-DiscordBot)
+>
+> **you want do supporter channel is click to link**  
+> [Discord Surpporter channel](https://discord.gg/Ed9J5ueqUx)
 
 ## Docker architecture
 <figure align="center">
