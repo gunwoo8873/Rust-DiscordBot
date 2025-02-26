@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  discord-bot:
+  application:
     image: choigunwoo/discord-bot:a1.0.4
     container_name: discord_bot_app
     depends_on:
@@ -12,7 +12,7 @@ services:
 #####################################################################################
   mysql:
     image: mysql:lts
-    container_name: discord_mysql
+    container_name: discord_bot_db
     environment:
       MYSQL_ROOT_PASSWORD: meat9563
       MYSQL_DATABASE: discord_bot
@@ -23,8 +23,20 @@ services:
       - mysql_data:/var/lib/mysql
     networks:
       - discord_network
+#####################################################################################
+  jenkins:
+    image: jenkins/jenkins:latest
+    container_name: jenkins
+    prots:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+    networks:
+      - discord_network
+#####################################################################################
 networks:
   discord_network:
-
+#####################################################################################
 volumes:
   mysql_data:
