@@ -3,6 +3,14 @@ name = "discord_bot"
 version = "0.1.0"
 edition = "2024"
 
+[profile.dev]
+opt-level = 0
+debug = true
+
+[profile.release]
+opt-level = 3
+debug = false
+
 # DiscordBot
 [dependencies.serenity]
 default-features = false
@@ -21,18 +29,18 @@ features = [
   "rustls_backend",
 ]
 
-# [dependencies.sqlx]
-# version = "0.8.3"
-# features = ["runtime-tokio", "macros", "mysql", "time"]
-
-[dependencies.tokio]
-version = "1.43.0"
-features = ["full"]
-
 [dependencies]
+# Read env file
 dotenv = "0.15.0"
-# AWS
-aws-config = { version = "1.5.16" }
-aws-sdk-config = { version = "1.62.0" }
-aws-sdk-ec2 = { version = "1.110.0" }
-aws-sdk-s3 = { version = "1.76.0" }
+
+# Async runtime protocol
+tokio = { version = "1.43.0", features = ["full"] }
+
+# Database 
+sqlx = { version = "0.8.3", features = ["runtime-tokio", "macros", "mysql", "time", "chrono"] }
+
+# AWS Service
+aws-config = { version = "1.5.17" }
+aws-sdk-config = { version = "1.63.0" }
+aws-sdk-ec2 = { version = "1.112.0" }
+# aws-sdk-s3 = { version = "1.77.0" }

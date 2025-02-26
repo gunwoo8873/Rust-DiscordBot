@@ -1,9 +1,11 @@
 # Added by cargo
-.idea
-.vscode
-target/
+.idea/
+.vscode/
 
+# Rust
+target/
+*.lock
+
+# User private files
 .env
 config
-
-*.lock
