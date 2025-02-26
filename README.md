@@ -19,13 +19,15 @@
   and **temporary security tokens**.
 
 ## Project information
-* Member :  
+* **Member :**  
   [PITLANE](https://github.com/gunwoo8873), [zxcxz01](https://github.com/zxcxz01), [sssoeun](https://github.com/sssoeun), [Byun-Sung-Ho](https://github.com/Byun-Sung-Ho)
-* Dev date :  
+* **Dev date :**  
   2025. 01. ~ **
-* Descriotion :  
+  2026. 
+* **Descriotion :**  
   This project is Discord bot and AWS cloud system status checking for on the rust language
-* Docs :  
+
+* **Docs :**  
   [Serenity Reference](https://github.com/serenity-rs)  
   [Discord Document](https://discord.com/developers/docs/intro)  
   [1. Slash Commands sample](./Docs/Slash_Command.md)  
@@ -54,6 +56,15 @@
 * **mysql** : using for global slash command data save
 
   ### Cargo.toml lib
+  ```toml
+  [profile.dev]
+  opt-level = 0
+  debug = true
+
+  [profile.release]
+  opt-level = 3
+  debug = false
+  ```
   
   ```toml
   # Path : ./discord_bot/Cargo.toml
@@ -92,21 +103,21 @@
   features = ["runtime-tokio", "mysql", "macros", "time"]
 
   # AWS
-  aws-config = { version = "1.5.16" }
-  aws-sdk-config = { version = "1.62.0" }
-  aws-sdk-ec2 = { version = "1.110.0" }
-  aws-sdk-s3 = { version = "1.76.0" }
+  aws-config = { version = "1.5.16" } # Lib creates.io link https://crates.io/crates/aws-config
+  aws-sdk-config = { version = "1.62.0" } # Lib creates.io link https://crates.io/crates/aws-sdk-config
+  aws-sdk-ec2 = { version = "1.110.0" } # Lib creates.io link https://crates.io/crates/aws-sdk-ec2
+  aws-sdk-s3 = { version = "1.76.0" } # Lib creates.io link https://crates.io/crates/aws-sdk-s3
   ```
 
   ### Project build
   ```bash
   # Path : ./discord_bot
-  cargo build
+  cargo build --release
   ```
 
   ### Local application run 
   ```bash
-  cargo run
+  cargo run --release
   ```
 
 ### Discord
