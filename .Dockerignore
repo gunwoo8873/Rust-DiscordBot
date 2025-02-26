@@ -1,11 +1,21 @@
-# Added by cargo
-.github/
+# Github ignore files
+.github
+.git
+.idea
+.gitignore
 
-.env
+# Rust ignore files
 config
+target
 *.lock
-target/
 
-img/
-Dosc/
+# Other ignore files
+img
+Dosc
 LISENCE
+
+# Image ignore files
+*.jpg
+*.png
+*.jpeg
+*.md

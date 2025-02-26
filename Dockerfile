@@ -19,5 +19,5 @@ CMD ["cargo", "run", "--release"]
 # Current size of image :
 # a1.0.0 : size : 3.49GB  | ver.bullsys
 # a1.0.2 : size : 13.95GB, build time : 14m 45s | ver.slim
-# a1.0.3 : size : 11.75GB, build time : 23m 30s | ver.bullsys
+# a1.0.3 : size : 20.64GB, build time : 23m 30s | ver.bullsys
 #######################################################################
