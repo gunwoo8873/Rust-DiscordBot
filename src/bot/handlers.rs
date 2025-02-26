@@ -1,5 +1,6 @@
 use std::env;
 
+use serenity::all::{CreateEmbed, Timestamp};
 use serenity::async_trait;
 use serenity::model::application::Interaction;
 use serenity::model::gateway::Ready;
@@ -25,7 +26,6 @@ impl EventHandler for Handler {
       if let Some(content) = content {
         let data = CreateInteractionResponseMessage::new().content(content);
         let builder = CreateInteractionResponse::Message(data);
-
         if let Err(why) = command.create_response(&ctx.http, builder).await{
           println!("Cannot respond to slash command: {}", why);
         }

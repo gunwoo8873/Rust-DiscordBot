@@ -1,33 +1,38 @@
-use serenity::builder::{CreateCommand, CreateCommandOption};
+use serenity::builder::{CreateCommand, CreateEmbed, CreateCommandOption};
 use serenity::model::application::{CommandOptionType, ResolvedOption, ResolvedValue};
+use serenity::model::Timestamp;
 
-use aws_config::meta::region::Region;
-use aws_sdk_ec2::Client::Instance;
+// use aws_config;
+// use aws_sdk_ec2;
 
-struct Aws {
-  pub region: String,
-  pub command: String,
-  pub action: String,
-  pub number: i8,
-}
+// struct Aws {
+//   pub region: String,
+//   pub command: String,
+//   pub action: String,
+//   pub number: i8,
+// }
 
-impl Aws {
-  async fn ec2_list() {
-    println!("EC2 List");
-  }
-}
+// impl Aws {
+//   async fn ec2_list() {
+    
+//   }
+// }
 
-pub fn response(_options: &[ResolvedOption]) {
-  if let Some(ResolvedOption { value, .. }) = _options.get(0) {
-    match value {
-      ResolvedValue::String(s) => println!("{}", s),
-      ResolvedValue::Number(n) => println!("{}", n),
-      _ => println!("Unknown"),
-    }
-  }
-}
+// struct AwsClient {
+//   pub config: aws_config::ConfigLoader,
+//   pub instance: aws_sdk_ec2::Client,
+// }
 
-// Feture layout : Maincommand -> Subcommandgroup -> Subcommand
+// pub fn response(_options: &[ResolvedOption]) {
+//   let embed = CreateEmbed::new().title("").description("description")
+//       .fields(vec![
+//         ("", "field", true),
+//         ("", "field", true),
+//       ])
+//       .timestamp(Timestamp::now());
+// }
+
+// Feture layout : Maincommand -> Subcommandgroup -> Subcommand -> Options
 pub fn request() -> CreateCommand {
   CreateCommand::new("aws").description("AWS service access control")
   .add_option(CreateCommandOption::new(CommandOptionType::SubCommand, "region", "Current Region"))

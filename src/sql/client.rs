@@ -10,7 +10,7 @@ pub struct Database {
 impl Database {
   pub async fn conn() -> Result<Self, sqlx::Error> {
     dotenv().ok();
-    let db_url = env::var("MYSQL_URL").expect("Expected a database url in the environment");
+    let db_url = env::var("DOCKER_MYSQL_URL").expect("Expected a database url in the environment");
     let pool = MySqlPoolOptions::new()
     .max_connections(5)
     .connect(&db_url)
