@@ -101,7 +101,7 @@
   ### Project build
   ```bash
   # Path : ./discord_bot
-  cargo build --release
+  cargo build
   ```
 
   ### Local application run 
