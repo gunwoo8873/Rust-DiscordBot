@@ -1,3 +1,3 @@
 pub mod ping;
-pub mod aws;
+pub mod aws_commands;
 // pub mod test_command;

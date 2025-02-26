@@ -1,2 +1,3 @@
-pub mod http;
+pub mod bot;
 pub mod commands;
+pub mod sql;

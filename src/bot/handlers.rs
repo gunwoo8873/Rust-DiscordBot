@@ -49,10 +49,7 @@ impl EventHandler for Handler {
     let commands = guild_id
     .set_commands(&ctx.http, vec![
       commands::ping::request(),
-      commands::aws::request(),
-      // commands::aws::ec2::request(),
-      // commands::aws::ecr::request(),
-      // commands::aws::s3::request(),
+      commands::aws_commands::request(),
       // commands::test_command::register(),
     ])
     .await;

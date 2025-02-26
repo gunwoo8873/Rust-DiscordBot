@@ -1,9 +1,31 @@
 use serenity::builder::{CreateCommand, CreateCommandOption};
 use serenity::model::application::{CommandOptionType, ResolvedOption, ResolvedValue};
 
-// pub fn response(_options: &[ResolvedOption]) -> String {
-  
-// }
+use aws_config::meta::region::Region;
+use aws_sdk_ec2::Client::Instance;
+
+struct Aws {
+  pub region: String,
+  pub command: String,
+  pub action: String,
+  pub number: i8,
+}
+
+impl Aws {
+  async fn ec2_list() {
+    println!("EC2 List");
+  }
+}
+
+pub fn response(_options: &[ResolvedOption]) {
+  if let Some(ResolvedOption { value, .. }) = _options.get(0) {
+    match value {
+      ResolvedValue::String(s) => println!("{}", s),
+      ResolvedValue::Number(n) => println!("{}", n),
+      _ => println!("Unknown"),
+    }
+  }
+}
 
 // Feture layout : Maincommand -> Subcommandgroup -> Subcommand
 pub fn request() -> CreateCommand {
