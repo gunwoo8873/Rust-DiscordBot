@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   application:
-    image: choigunwoo/discord-bot:a1.0.4
+    image: choigunwoo/discord-bot:a1.0.5
     container_name: discord_bot_app
     depends_on:
       - mysql
@@ -25,9 +25,10 @@ services:
       - discord_network
 #####################################################################################
   jenkins:
-    image: jenkins/jenkins:latest
+    image: jenkins/jenkins:lts
     container_name: jenkins
-    prots:
+    user: root
+    ports:
       - "8080:8080"
       - "50000:50000"
     volumes:
