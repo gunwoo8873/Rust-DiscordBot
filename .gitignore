@@ -9,3 +9,6 @@ target/
 # User private files
 .env
 config
+
+# Jenkins
+jenkins_home/
