@@ -61,6 +61,7 @@
 
   ### Cargo.toml lib
   ```toml
+  # Path : ./discord_bot/Cargo.toml
   [profile.dev]
   opt-level = 0
   debug = true
