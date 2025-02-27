@@ -73,7 +73,7 @@
   ```toml
   # Path : ./discord_bot/Cargo.toml
 
-  # Discord bot project base lib
+  #### Discord bot project base lib
   [dependencies.serenity]
   default-features = false
   version = "0.12.4"
@@ -91,22 +91,22 @@
       "rustls_backend",
   ]
 
-  # Http protocol async feature lib
+  #### Http protocol async feature lib
   [dependencies.tokio]
   version = "1.43.0"
   features = ["full"]
 
-  # Read to .env file lib
+  #### Read to .env file lib
   [dependencies.dotenv]
   version = "0.15.0"
 
-  # Database async feature lib
+  #### Database async feature lib
   [dependencies.sqlx]
   default-features = false
   version = "0.8.3"
   features = ["runtime-tokio", "mysql", "macros", "time"]
 
-  # AWS
+  #### AWS
   aws-config = { version = "1.5.16" } # Lib creates.io link https://crates.io/crates/aws-config
   aws-sdk-config = { version = "1.62.0" } # Lib creates.io link https://crates.io/crates/aws-sdk-config
   aws-sdk-ec2 = { version = "1.110.0" } # Lib creates.io link https://crates.io/crates/aws-sdk-ec2
