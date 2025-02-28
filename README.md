@@ -62,6 +62,7 @@
   ### Cargo.toml lib
   ```toml
   # Path : ./discord_bot/Cargo.toml
+  
   [profile.dev]
   opt-level = 0
   debug = true
@@ -92,7 +93,7 @@
       "rustls_backend",
   ]
 
-  #### Http protocol async feature lib
+  #### Http protocol async, await feature lib
   [dependencies.tokio]
   version = "1.43.0"
   features = ["full"]
@@ -117,6 +118,7 @@
   ### Project build
   ```bash
   # Path : ./discord_bot
+  
   cargo build --release
   ```
 
@@ -131,6 +133,7 @@
   * ### Config
     ```env
     # Path : /Discord-Bot/.env
+    
     # Main Discord bot connection variables
     DISCORD_BOT_TOKEN=YOUR_DISCORD_BOT_TOKEN
     GUILD_ID=YOUR_DISCORD_GUILD_ID
@@ -154,7 +157,8 @@
 
   * ### Config
     ```config
-    # Path : ~/.ssh/config
+    # Path : ~/.aws/config
+    
     [default]
     region = YOUR_MAIN_BASE_REGION
     output = json
@@ -174,6 +178,7 @@
 
     ```config
     # Path : ~/.aws/credentials
+    
     [default]
     aws_access_key_id = YOUR_AWS_IAM_ACCESS_KEY
     aws_secret_access_key = YOUR_AWS_IAM_SECRET_ACCESS_KEY
