@@ -43,12 +43,12 @@
 
 ## Docker architecture
 <figure align="center">
-  <img src="./img/Docker-architecture.png" alt="" width=600>
+  <img src="./img/Docker-architecture.png" alt="" height=50%>
 </figure>
 
 ## Discord architecture
 <figure align="center">
-  <img src="./img/Discord-architecture.png" alt="" width=600>
+  <img src="./img/Discord-architecture.png" alt="" height=50%>
 </figure>
 
 ## Getting started guide
