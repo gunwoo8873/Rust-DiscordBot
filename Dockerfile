@@ -26,7 +26,7 @@ RUN cargo build ${CARGO_BUILD_PROFILE_RELEASE}
 #### Application run command line
 CMD ["cargo", "run", "--release"]
 
-# Issue : Current docker image size is min 3.49GB and max 20.64GB very high
+# Issue : Current docker image size is min 3.49GB and max 20.64GB very heavy
 #######################################################################
 # Current size of image :
 # a1.0.0 : size : 3.49GB  | ver.bullsys
