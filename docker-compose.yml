@@ -7,10 +7,8 @@ services:
       - mysql
     env_file:
       - .env
-    ports:
-      - "30000:30000"
     networks:
-      - discord_network
+      - bot_network
 #####################################################################################
   mysql:
     image: mysql:lts
@@ -22,9 +20,9 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - discord_bot_volume:/var/mysql
+      - mysql_data:/var/mysql
     networks:
-      - discord_network
+      - bot_network
 #####################################################################################
   jenkins:
     image: jenkins/jenkins:lts
@@ -34,25 +32,26 @@ services:
       - "30001:8080"
       - "50000:50000"
     volumes:
-      - discord_bot_volume:/var/jenkins_home
+      - jenkins_home:/var/jenkins_home
     networks:
-      - discord_network
+      - bot_network
 #####################################################################################
-  argocd:
-    image: argoproj/argocd:v2.6.15 # Current argocd latest version is 2.6.15
-    container_name: argocd
-    command: ["/usr/local/bin/argocd-server", "--server", "0.0.0.0:8081"]
-    ports:
-      - "30002:8080"
-      - "443:443"
-    volumes:
-      - discord_bot_volume:/apps
-    networks:
-      - discord_network
+  # argocd:
+  #   image: argoproj/argocd:v2.6.15 # Current argocd latest version is 2.6.15
+  #   container_name: argocd
+  #   ports:
+  #     - "30002:80"
+  #     - "50002:443"
+  #   volumes:
+  #     - argocd_apps:/apps
+  #   networks:
+  #     - bot_network
 #####################################################################################
 networks:
-  discord_network:
+  bot_network:
     driver: bridge
 #####################################################################################
 volumes:
-  discord_bot_volume:
+  mysql_data:
+  jenkins_home:
+  argocd_apps:
