@@ -5,7 +5,7 @@ use std::time::Duration;
 use tokio::time::sleep;
 
 use serenity::prelude::*;
-use crate::bot::handlers::Handler;
+use crate::bot::client_handlers::Handler;
 use crate::bot::aws_client::aws_run;
 use crate::sql::client::Database;
 

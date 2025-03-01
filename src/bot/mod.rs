@@ -1,3 +1,3 @@
 pub mod bot_client;
-mod handlers;
+mod client_handlers;
 mod aws_client;
