@@ -1,23 +1,30 @@
 # Dockerfile image build
 
 ```Dockerfile
-FROM rust:1.58.1-slim AS builder
+FROM rust:1.84.1-slim AS builder
 
-WORKDIR /app
+#### Rust toolchain env variables
+ENV RUST_TOOLCHAIN="nightly"
+ENV RUST_TOOLCHAIN_UPDATE="rustup update"
+
+#### Rust using for default version
+RUN rustup default ${RUST_TOOLCHAIN}
+RUN ${RUST_TOOLCHAIN_UPDATE}
+
+#### Default working directory
+WORKDIR /usr/src/Discord-Bot
 COPY . .
 
-ENV PROFILE=release
+#### Volume commented
+# VOLUME [ "/usr/src/Discord-Bot/data" ]
 
+#### Project build env variables
+ENV CARGO_BUILD_PROFILE_RELEASE="--release"
+
+#### Application build script line
 RUN cargo install --path .
-RUN cargo build --{{profile}}
-RUN cargo run --{{profile}}
+RUN cargo build ${CARGO_BUILD_PROFILE_RELEASE}
 
-CMD ["./target/{{profile}}/app"]
+#### Application run command line
+CMD ["cargo", "run", "--release"]
 ```
-
-* FROM
-* WORKDIR
-* COPY
-* ENV
-* RUN
-* CMD
