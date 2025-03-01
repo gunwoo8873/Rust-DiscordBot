@@ -4,16 +4,17 @@ on:
   push:
     branches: [ "main" ]
     paths-ignore:
-      - 'README.md'
+      - 'LICENSE'
+      - '.gitignore'
+      - '.dockerignore'
+      - 'Dockerfile'
+      - '.env.*'
       - '**/*.md'
       - '**/*.png'
       - '**/*.jpg'
       - '**/*.svg'
-      - 'LICENSE'
-      - '.gitignore'
-      - '.github/**/*.yml'
+      - '**/**/*.yml'
       - '**/**/*.yaml'
-      - 'docker-compose.yml'
       - '*.toml'
       - '*.ps1'
   workflow_dispatch:
