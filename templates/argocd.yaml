@@ -1,0 +1,8 @@
+appVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: discord-argocd-helm
+  namespace: discord-argocd
+
+spec:
+  description: The discord bot project
