@@ -1,36 +1,48 @@
-use serenity::builder::{CreateCommand, CreateEmbed, CreateCommandOption};
+use serenity::builder::{CreateCommand, CreateCommandOption};
 use serenity::model::application::{CommandOptionType, ResolvedOption, ResolvedValue};
-use serenity::model::Timestamp;
 
-// use aws_config;
-// use aws_sdk_ec2;
-
-// struct Aws {
-//   pub region: String,
-//   pub command: String,
-//   pub action: String,
-//   pub number: i8,
-// }
-
-// impl Aws {
-//   async fn ec2_list() {
-    
-//   }
-// }
-
-// struct AwsClient {
-//   pub config: aws_config::ConfigLoader,
-//   pub instance: aws_sdk_ec2::Client,
-// }
-
-// pub fn response(_options: &[ResolvedOption]) {
-//   let embed = CreateEmbed::new().title("").description("description")
-//       .fields(vec![
-//         ("", "field", true),
-//         ("", "field", true),
-//       ])
-//       .timestamp(Timestamp::now());
-// }
+pub fn responce(_options: &[ResolvedOption]) -> String {
+  if let Some(option) = _options.first() {
+    match &*option.name {
+      "region" => {
+        match option.value {
+          ResolvedValue::String(s) => {
+            return format!("Current region is {}", s);
+          },
+          _ => {},
+        }
+      },
+      "ec2" => {
+        match option.value {
+          ResolvedValue::String(s) => {
+            return format!("Current ec2 command is {}", s);
+          },
+          _ => {},
+        }
+      },
+      "s3" => {
+        match option.value {
+          ResolvedValue::String(s) => {
+            return format!("Current s3 command is {}", s);
+          },
+          _ => {},
+        }
+      },
+      "ecr" => {
+        match option.value {
+          ResolvedValue::String(s) => {
+            return format!("Current ecr command is {}", s);
+          },
+          _ => {},
+        }
+      },
+      _ => {
+        return "Invalid command structure".to_string();
+      },
+    };
+  }
+  "Invalid command structure".to_string()
+}
 
 // Feture layout : Maincommand -> Subcommandgroup -> Subcommand -> Options
 pub fn request() -> CreateCommand {

@@ -19,7 +19,7 @@ impl EventHandler for Handler {
     if let Interaction::Command(command) = interaction {
       let content = match command.data.name.as_str() {
         "ping" => Some(commands::ping::response(&command.data.options())),
-        // "aws" => Some(commands::aws::run(&command.data.options())),
+        "aws" => Some(commands::aws_commands::responce(&command.data.options())),
         _ => Some("Not implemented : (".to_string()),
       };
 
