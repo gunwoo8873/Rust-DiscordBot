@@ -31,7 +31,7 @@ function Manage-Service {
       }
     "4" {
         Write-Host "Exiting..."
-        return  # 함수 실행 종료 (더 이상 반복되지 않음)
+        return
       }
       default {
         Write-Host "Invalid selection. Please choose a number between 1 and 4."
@@ -40,5 +40,4 @@ function Manage-Service {
   } while ($true)
 }
 
-# 실행
 Manage-Service
