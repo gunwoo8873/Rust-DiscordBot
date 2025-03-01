@@ -42,5 +42,8 @@ sqlx = { version = "0.8.3", features = ["runtime-tokio", "macros", "mysql", "tim
 # AWS Service
 aws-config = { version = "1.5.17" }
 aws-sdk-config = { version = "1.63.0" }
-aws-sdk-ec2 = { version = "1.112.0" }
+# aws-sdk-ec2 = { version = "1.112.0" }
 # aws-sdk-s3 = { version = "1.77.0" }
+
+[env]
+test = "testenv"
