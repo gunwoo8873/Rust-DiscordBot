@@ -1,1 +1,0 @@
-$MYSQL_SERVICE = "mysqld"
