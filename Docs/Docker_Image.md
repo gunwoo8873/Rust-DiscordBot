@@ -1,5 +1,4 @@
 # Dockerfile image build
-
 ```Dockerfile
 FROM rust:1.84.1-slim AS builder
 
@@ -28,3 +27,6 @@ RUN cargo build ${CARGO_BUILD_PROFILE_RELEASE}
 #### Application run command line
 CMD ["cargo", "run", "--release"]
 ```
+
+> [!NOTE]
+> **Dockerfile base image to bullsys and latest version is very big and very hearvy size, then im used base image to slim from the rust 1.84.1 latest version. Discord Bot is use library for rust toolchain need to nightly version.**
