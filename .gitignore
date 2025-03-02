@@ -1,14 +1,14 @@
-# Added by cargo
+# IDEs
 .idea/
 .vscode/
 
-# Rust
+# Rust build dir and files
 target/
 *.lock
+
+# Jenkins
+jenkins_home/
 
 # User private files
 .env
 config
-
-# Jenkins
-jenkins_home/

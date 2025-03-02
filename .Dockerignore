@@ -14,7 +14,7 @@ Dosc
 LISENCE
 
 # Image ignore files
-*.jpg
-*.png
-*.jpeg
-*.md
+**/*.jpg
+**/*.png
+**/*.jpeg
+**/*.md
