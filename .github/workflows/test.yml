@@ -3,20 +3,21 @@ name: test actions
 on:
   push:
     branches: [ "main" ]
-    paths-ignore:
-      - 'LICENSE'
-      - '.gitignore'
-      - '.dockerignore'
-      - 'Dockerfile'
-      - '.env.*'
-      - '**/*.md'
-      - '**/*.png'
-      - '**/*.jpg'
-      - '**/*.svg'
-      - '**/**/*.yml'
-      - '**/**/*.yaml'
-      - '*.toml'
-      - '*.ps1'
+    paths-ignore: [
+      "LICENSE",
+      ".gitignore",
+      ".dockerignore",
+      "Dockerfile",
+      ".env.*",
+      "**/*.md",
+      "**/*.png",
+      "**/*.jpg",
+      "**/*.svg",
+      "**/**/*.yml",
+      "**/**/*.yaml",
+      "*.toml",
+      "*.ps1",
+    ]
   workflow_dispatch:
 
 env: 
@@ -39,7 +40,7 @@ jobs:
       - name: Check Rust toolchain version
         run: rustup show
 
-      - name: Install and set rust toolchain
+      - name: Toolchain install and set rust toolchain
         run: |
           rustup toolchain install ${{ matrix.toolchain }}
           rustup override set ${{ matrix.toolchain }}
@@ -49,5 +50,3 @@ jobs:
           set -e
           cargo build --verbose
           cargo test --verbose
-    
-      
